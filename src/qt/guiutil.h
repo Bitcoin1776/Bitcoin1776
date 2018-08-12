@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2016 The Bitcoin Core developers
+// Copyright (c) 2011-2016 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_GUIUTIL_H
-#define BITCOIN_QT_GUIUTIL_H
+#ifndef JFKBITCOIN1776_QT_GUIUTIL_H
+#define JFKBITCOIN1776_QT_GUIUTIL_H
 
 #include "amount.h"
 #include "fs.h"
@@ -29,7 +29,7 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the Bitcoin Qt UI.
+/** Utility functions used by the JFKBitcoin1776 Qt UI.
  */
 namespace GUIUtil
 {
@@ -44,10 +44,10 @@ namespace GUIUtil
     void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "bitcoin:" URI into recipient object, return true on successful parsing
-    bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out);
-    bool parseBitcoinURI(QString uri, SendCoinsRecipient *out);
-    QString formatBitcoinURI(const SendCoinsRecipient &info);
+    // Parse "jfkbitcoin1776:" URI into recipient object, return true on successful parsing
+    bool parseJFKBitcoin1776URI(const QUrl &uri, SendCoinsRecipient *out);
+    bool parseJFKBitcoin1776URI(QString uri, SendCoinsRecipient *out);
+    QString formatJFKBitcoin1776URI(const SendCoinsRecipient &info);
 
     // Returns true if given address+amount meets "dust" definition
     bool isDust(const QString& address, const CAmount& amount);
@@ -114,7 +114,7 @@ namespace GUIUtil
     void openDebugLogfile();
 
     // Open the config file
-    bool openBitcoinConf();
+    bool openJFKBitcoin1776Conf();
 
     // Replace invalid default fonts with known good ones
     void SubstituteFonts(const QString& language);
@@ -241,4 +241,4 @@ namespace GUIUtil
 
 } // namespace GUIUtil
 
-#endif // BITCOIN_QT_GUIUTIL_H
+#endif // JFKBITCOIN1776_QT_GUIUTIL_H

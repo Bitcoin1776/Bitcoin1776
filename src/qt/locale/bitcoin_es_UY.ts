@@ -56,7 +56,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>JFKBitcoin1776GUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Sincronizando con la red...</translation>
@@ -110,16 +110,16 @@
         <translation>Recibiendo direcciones</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Enviar monedas a una dirección Bitcoin</translation>
+        <source>Send coins to a JFKBitcoin1776 address</source>
+        <translation>Enviar monedas a una dirección JFKBitcoin1776</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Cambie la clave utilizada para el cifrado del monedero</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>JFKBitcoin1776</source>
+        <translation>JFKBitcoin1776</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -437,7 +437,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>jfkbitcoin1776-core</name>
     <message>
         <source>Options:</source>
         <translation>Opciones:</translation>

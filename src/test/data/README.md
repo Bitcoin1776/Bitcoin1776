@@ -1,7 +1,7 @@
 Description
 ------------
 
-This directory contains data-driven tests for various aspects of Bitcoin.
+This directory contains data-driven tests for various aspects of JFKBitcoin1776.
 
 License
 --------

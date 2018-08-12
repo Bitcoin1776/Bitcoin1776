@@ -1,15 +1,15 @@
 [Unit]
-Description=Bitcoin's distributed currency daemon
+Description=JFKBitcoin1776's distributed currency daemon
 After=network.target
 
 [Service]
-User=bitcoin
-Group=bitcoin
+User=jfkbitcoin1776
+Group=jfkbitcoin1776
 
 Type=forking
-PIDFile=/var/lib/bitcoind/bitcoind.pid
-ExecStart=/usr/bin/bitcoind -daemon -pid=/var/lib/bitcoind/bitcoind.pid \
--conf=/etc/bitcoin/bitcoin.conf -datadir=/var/lib/bitcoind -disablewallet
+PIDFile=/var/lib/jfkbitcoin1776d/jfkbitcoin1776d.pid
+ExecStart=/usr/bin/jfkbitcoin1776d -daemon -pid=/var/lib/jfkbitcoin1776d/jfkbitcoin1776d.pid \
+-conf=/etc/jfkbitcoin1776/jfkbitcoin1776.conf -datadir=/var/lib/jfkbitcoin1776d -disablewallet
 
 Restart=always
 PrivateTmp=true

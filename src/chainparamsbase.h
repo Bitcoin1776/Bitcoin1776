@@ -1,17 +1,17 @@
-// Copyright (c) 2014-2015 The Bitcoin Core developers
+// Copyright (c) 2014-2015 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CHAINPARAMSBASE_H
-#define BITCOIN_CHAINPARAMSBASE_H
+#ifndef JFKBITCOIN1776_CHAINPARAMSBASE_H
+#define JFKBITCOIN1776_CHAINPARAMSBASE_H
 
 #include <memory>
 #include <string>
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between bitcoin-cli and bitcoind)
- * of a given instance of the Bitcoin system.
+ * CBaseChainParams defines the base parameters (shared between jfkbitcoin1776-cli and jfkbitcoin1776d)
+ * of a given instance of the JFKBitcoin1776 system.
  */
 class CBaseChainParams
 {
@@ -59,4 +59,4 @@ void SelectBaseParams(const std::string& chain);
  */
 std::string ChainNameFromCommandLine();
 
-#endif // BITCOIN_CHAINPARAMSBASE_H
+#endif // JFKBITCOIN1776_CHAINPARAMSBASE_H

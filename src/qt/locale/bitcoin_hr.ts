@@ -54,8 +54,8 @@
         <translation>&amp;Odaberi</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ovo su vaše Bitcoin adrese za slanje novca. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
+        <source>These are your JFKBitcoin1776 addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ovo su vaše JFKBitcoin1776 adrese za slanje novca. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -92,7 +92,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>JFKBitcoin1776GUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>P&amp;otpišite poruku...</translation>
@@ -174,8 +174,8 @@
         <translation>Re-indeksiranje blokova na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Slanje novca na bitcoin adresu</translation>
+        <source>Send coins to a JFKBitcoin1776 address</source>
+        <translation>Slanje novca na jfkbitcoin1776 adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -198,8 +198,8 @@
         <translation>&amp;Potvrdite poruku...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>JFKBitcoin1776</source>
+        <translation>JFKBitcoin1776</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -226,12 +226,12 @@
         <translation>Šifriranje privatnih ključeva koji u novčaniku</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Poruku potpišemo s bitcoin adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
+        <source>Sign messages with your JFKBitcoin1776 addresses to prove you own them</source>
+        <translation>Poruku potpišemo s jfkbitcoin1776 adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom bitcoin adresom</translation>
+        <source>Verify messages to ensure they were signed with specified JFKBitcoin1776 addresses</source>
+        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom jfkbitcoin1776 adresom</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -250,8 +250,8 @@
         <translation>Traka kartica</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Zatraži uplatu (stvara QR kod i bitcoin: URI adresu)</translation>
+        <source>Request payments (generates QR codes and jfkbitcoin1776: URIs)</source>
+        <translation>Zatraži uplatu (stvara QR kod i jfkbitcoin1776: URI adresu)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -262,16 +262,16 @@
         <translation>Prikaži popis korištenih adresa i oznaka za primanje novca</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>Otvori bitcoin: URI adresu ili zahtjev za uplatu</translation>
+        <source>Open a jfkbitcoin1776: URI or payment request</source>
+        <translation>Otvori jfkbitcoin1776: URI adresu ili zahtjev za uplatu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Opcije &amp;naredbene linije</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network</source>
-        <translation><numerusform>%n aktivna veza na Bitcoin mrežu</numerusform><numerusform>%n aktivnih veza na Bitcoin mrežu</numerusform><numerusform>%n aktivnih veza na Bitcoin mrežu</numerusform></translation>
+        <source>%n active connection(s) to JFKBitcoin1776 network</source>
+        <translation><numerusform>%n aktivna veza na JFKBitcoin1776 mrežu</numerusform><numerusform>%n aktivnih veza na JFKBitcoin1776 mrežu</numerusform><numerusform>%n aktivnih veza na JFKBitcoin1776 mrežu</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
@@ -423,11 +423,11 @@
     </message>
     <message>
         <source>The label associated with this address list entry</source>
-        <translation>Oznaka bitcoin adrese</translation>
+        <translation>Oznaka jfkbitcoin1776 adrese</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
-        <translation>Bitcoin adresa. Izmjene adrese su moguće samo za adrese za slanje.</translation>
+        <translation>JFKBitcoin1776 adresa. Izmjene adrese su moguće samo za adrese za slanje.</translation>
     </message>
     <message>
         <source>&amp;Address</source>
@@ -568,8 +568,8 @@
         <translation>&amp;Trošenje nepotvrđenih vraćenih iznosa</translation>
     </message>
     <message>
-        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatski otvori port Bitcoin klijenta na ruteru. To radi samo ako ruter podržava UPnP i ako je omogućen.</translation>
+        <source>Automatically open the JFKBitcoin1776 client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatski otvori port JFKBitcoin1776 klijenta na ruteru. To radi samo ako ruter podržava UPnP i ako je omogućen.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -617,7 +617,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Izaberite željeni najmanji dio bitcoina koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
+        <translation>Izaberite željeni najmanji dio jfkbitcoin1776a koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -643,8 +643,8 @@
         <translation>Oblik</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Prikazani podatci mogu biti zastarjeli. Vaš novčanik se automatski sinkronizira s Bitcoin mrežom kada je veza uspostavljena, ali taj proces još nije završen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the JFKBitcoin1776 network after a connection is established, but this process has not completed yet.</source>
+        <translation>Prikazani podatci mogu biti zastarjeli. Vaš novčanik se automatski sinkronizira s JFKBitcoin1776 mrežom kada je veza uspostavljena, ali taj proces još nije završen.</translation>
     </message>
     <message>
         <source>Total:</source>
@@ -1012,7 +1012,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>jfkbitcoin1776-core</name>
     <message>
         <source>Options:</source>
         <translation>Postavke:</translation>
@@ -1034,8 +1034,8 @@
         <translation>Izvršavaj u pozadini kao uslužnik i prihvaćaj komande</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>JFKBitcoin1776 Core</source>
+        <translation>JFKBitcoin1776 Core</translation>
     </message>
     <message>
         <source>Block creation options:</source>

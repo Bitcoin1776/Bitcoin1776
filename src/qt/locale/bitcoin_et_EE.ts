@@ -104,7 +104,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>JFKBitcoin1776GUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Võrguga sünkroniseerimine...</translation>
@@ -130,8 +130,8 @@
         <translation>Kõvakettal olevate plokkide reindekseerimine...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>JFKBitcoin1776</source>
+        <translation>JFKBitcoin1776</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -754,14 +754,14 @@
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>jfkbitcoin1776-core</name>
     <message>
         <source>Options:</source>
         <translation>Valikud:</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>JFKBitcoin1776 Core</source>
+        <translation>JFKBitcoin1776 Core</translation>
     </message>
     <message>
         <source>Information</source>

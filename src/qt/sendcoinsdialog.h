@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2016 The Bitcoin Core developers
+// Copyright (c) 2011-2016 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_SENDCOINSDIALOG_H
-#define BITCOIN_QT_SENDCOINSDIALOG_H
+#ifndef JFKBITCOIN1776_QT_SENDCOINSDIALOG_H
+#define JFKBITCOIN1776_QT_SENDCOINSDIALOG_H
 
 #include "walletmodel.h"
 
@@ -25,7 +25,7 @@ QT_BEGIN_NAMESPACE
 class QUrl;
 QT_END_NAMESPACE
 
-/** Dialog for sending bitcoins */
+/** Dialog for sending jfkbitcoin1776s */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT
@@ -120,4 +120,4 @@ private:
     int secDelay;
 };
 
-#endif // BITCOIN_QT_SENDCOINSDIALOG_H
+#endif // JFKBITCOIN1776_QT_SENDCOINSDIALOG_H

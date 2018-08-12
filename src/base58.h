@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin Core developers
+// Copyright (c) 2009-2015 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,8 +11,8 @@
  * - E-mail usually won't line-break if there's no punctuation to break at.
  * - Double-clicking selects the whole string as one word if it's all alphanumeric.
  */
-#ifndef BITCOIN_BASE58_H
-#define BITCOIN_BASE58_H
+#ifndef JFKBITCOIN1776_BASE58_H
+#define JFKBITCOIN1776_BASE58_H
 
 #include "chainparams.h"
 #include "key.h"
@@ -95,13 +95,13 @@ public:
     bool operator> (const CBase58Data& b58) const { return CompareTo(b58) >  0; }
 };
 
-/** base58-encoded Bitcoin addresses.
+/** base58-encoded JFKBitcoin1776 addresses.
  * Public-key-hash-addresses have version 0 (or 111 testnet).
  * The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
  * Script-hash-addresses have version 5 (or 196 testnet).
  * The data vector contains RIPEMD160(SHA256(cscript)), where cscript is the serialized redemption script.
  */
-class CBitcoinAddress : public CBase58Data {
+class CJFKBitcoin1776Address : public CBase58Data {
 public:
     bool Set(const CKeyID &id);
     bool Set(const CScriptID &id);
@@ -109,10 +109,10 @@ public:
     bool IsValid() const;
     bool IsValid(const CChainParams &params) const;
 
-    CBitcoinAddress() {}
-    CBitcoinAddress(const CTxDestination &dest) { Set(dest); }
-    CBitcoinAddress(const std::string& strAddress) { SetString(strAddress); }
-    CBitcoinAddress(const char* pszAddress) { SetString(pszAddress); }
+    CJFKBitcoin1776Address() {}
+    CJFKBitcoin1776Address(const CTxDestination &dest) { Set(dest); }
+    CJFKBitcoin1776Address(const std::string& strAddress) { SetString(strAddress); }
+    CJFKBitcoin1776Address(const char* pszAddress) { SetString(pszAddress); }
 
     CTxDestination Get() const;
     bool GetKeyID(CKeyID &keyID) const;
@@ -122,7 +122,7 @@ public:
 /**
  * A base58-encoded secret key
  */
-class CBitcoinSecret : public CBase58Data
+class CJFKBitcoin1776Secret : public CBase58Data
 {
 public:
     void SetKey(const CKey& vchSecret);
@@ -131,11 +131,11 @@ public:
     bool SetString(const char* pszSecret);
     bool SetString(const std::string& strSecret);
 
-    CBitcoinSecret(const CKey& vchSecret) { SetKey(vchSecret); }
-    CBitcoinSecret() {}
+    CJFKBitcoin1776Secret(const CKey& vchSecret) { SetKey(vchSecret); }
+    CJFKBitcoin1776Secret() {}
 };
 
-template<typename K, int Size, CChainParams::Base58Type Type> class CBitcoinExtKeyBase : public CBase58Data
+template<typename K, int Size, CChainParams::Base58Type Type> class CJFKBitcoin1776ExtKeyBase : public CBase58Data
 {
 public:
     void SetKey(const K &key) {
@@ -153,18 +153,18 @@ public:
         return ret;
     }
 
-    CBitcoinExtKeyBase(const K &key) {
+    CJFKBitcoin1776ExtKeyBase(const K &key) {
         SetKey(key);
     }
 
-    CBitcoinExtKeyBase(const std::string& strBase58c) {
+    CJFKBitcoin1776ExtKeyBase(const std::string& strBase58c) {
         SetString(strBase58c.c_str(), Params().Base58Prefix(Type).size());
     }
 
-    CBitcoinExtKeyBase() {}
+    CJFKBitcoin1776ExtKeyBase() {}
 };
 
-typedef CBitcoinExtKeyBase<CExtKey, BIP32_EXTKEY_SIZE, CChainParams::EXT_SECRET_KEY> CBitcoinExtKey;
-typedef CBitcoinExtKeyBase<CExtPubKey, BIP32_EXTKEY_SIZE, CChainParams::EXT_PUBLIC_KEY> CBitcoinExtPubKey;
+typedef CJFKBitcoin1776ExtKeyBase<CExtKey, BIP32_EXTKEY_SIZE, CChainParams::EXT_SECRET_KEY> CJFKBitcoin1776ExtKey;
+typedef CJFKBitcoin1776ExtKeyBase<CExtPubKey, BIP32_EXTKEY_SIZE, CChainParams::EXT_PUBLIC_KEY> CJFKBitcoin1776ExtPubKey;
 
-#endif // BITCOIN_BASE58_H
+#endif // JFKBITCOIN1776_BASE58_H

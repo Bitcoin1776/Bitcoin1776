@@ -1,28 +1,28 @@
-Bitcoin Core version *0.15.0.1* is now available from:
+JFKBitcoin1776 Core version *0.15.0.1* is now available from:
 
-  <https://bitcoin.org/bin/bitcoin-core-0.15.0.1/>
+  <https://jfkbitcoin1776.org/bin/jfkbitcoin1776-core-0.15.0.1/>
 
 and
 
-  <https://bitcoincore.org/bin/bitcoin-core-0.15.0.1/>
+  <https://jfkbitcoin1776core.org/bin/jfkbitcoin1776-core-0.15.0.1/>
 
 This is a minor bug fix for 0.15.0.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/bitcoin/bitcoin/issues>
+  <https://github.com/jfkbitcoin1776/jfkbitcoin1776/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://bitcoincore.org/en/list/announcements/join/>
+  <https://jfkbitcoin1776core.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the 
-installer (on Windows) or just copy over `/Applications/Bitcoin-Qt` (on Mac)
-or `bitcoind`/`bitcoin-qt` (on Linux).
+installer (on Windows) or just copy over `/Applications/JFKBitcoin1776-Qt` (on Mac)
+or `jfkbitcoin1776d`/`jfkbitcoin1776-qt` (on Linux).
 
 The first time you run version 0.15.0 or higher, your chainstate database will
 be converted to a new format, which will take anywhere from a few minutes to
@@ -51,10 +51,10 @@ processing the entire blockchain.
 Compatibility
 ==============
 
-Bitcoin Core is extensively tested on multiple operating systems using
+JFKBitcoin1776 Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later. Windows XP is not supported.
 
-Bitcoin Core should also work on most other Unix-like systems but is not
+JFKBitcoin1776 Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable changes
@@ -84,4 +84,4 @@ Thanks to everyone who directly contributed to this release:
 - Jonas Schnelli
 - Wladimir J. van der Laan
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/jfkbitcoin1776/).

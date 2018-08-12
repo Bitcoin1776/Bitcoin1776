@@ -1,6 +1,6 @@
 [Protocol]
-exec=bitcoin-qt '%u'
-protocol=bitcoin
+exec=jfkbitcoin1776-qt '%u'
+protocol=jfkbitcoin1776
 input=none
 output=none
 helper=true

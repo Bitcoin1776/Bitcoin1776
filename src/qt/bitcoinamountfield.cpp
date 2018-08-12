@@ -1,10 +1,10 @@
-// Copyright (c) 2011-2015 The Bitcoin Core developers
+// Copyright (c) 2011-2015 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "bitcoinamountfield.h"
+#include "jfkbitcoin1776amountfield.h"
 
-#include "bitcoinunits.h"
+#include "jfkbitcoin1776units.h"
 #include "guiconstants.h"
 #include "qvaluecombobox.h"
 
@@ -24,7 +24,7 @@ class AmountSpinBox: public QAbstractSpinBox
 public:
     explicit AmountSpinBox(QWidget *parent):
         QAbstractSpinBox(parent),
-        currentUnit(BitcoinUnits::BTC),
+        currentUnit(JFKBitcoin1776Units::JFK),
         singleStep(100000) // satoshis
     {
         setAlignment(Qt::AlignRight);
@@ -48,7 +48,7 @@ public:
         CAmount val = parse(input, &valid);
         if(valid)
         {
-            input = BitcoinUnits::format(currentUnit, val, false, BitcoinUnits::separatorAlways);
+            input = JFKBitcoin1776Units::format(currentUnit, val, false, JFKBitcoin1776Units::separatorAlways);
             lineEdit()->setText(input);
         }
     }
@@ -60,7 +60,7 @@ public:
 
     void setValue(const CAmount& value)
     {
-        lineEdit()->setText(BitcoinUnits::format(currentUnit, value, false, BitcoinUnits::separatorAlways));
+        lineEdit()->setText(JFKBitcoin1776Units::format(currentUnit, value, false, JFKBitcoin1776Units::separatorAlways));
         Q_EMIT valueChanged();
     }
 
@@ -69,7 +69,7 @@ public:
         bool valid = false;
         CAmount val = value(&valid);
         val = val + steps * singleStep;
-        val = qMin(qMax(val, CAmount(0)), BitcoinUnits::maxMoney());
+        val = qMin(qMax(val, CAmount(0)), JFKBitcoin1776Units::maxMoney());
         setValue(val);
     }
 
@@ -99,7 +99,7 @@ public:
 
             const QFontMetrics fm(fontMetrics());
             int h = lineEdit()->minimumSizeHint().height();
-            int w = fm.width(BitcoinUnits::format(BitcoinUnits::BTC, BitcoinUnits::maxMoney(), false, BitcoinUnits::separatorAlways));
+            int w = fm.width(JFKBitcoin1776Units::format(JFKBitcoin1776Units::JFK, JFKBitcoin1776Units::maxMoney(), false, JFKBitcoin1776Units::separatorAlways));
             w += 2; // cursor blinking space
 
             QStyleOptionSpinBox opt;
@@ -137,10 +137,10 @@ private:
     CAmount parse(const QString &text, bool *valid_out=0) const
     {
         CAmount val = 0;
-        bool valid = BitcoinUnits::parse(currentUnit, text, &val);
+        bool valid = JFKBitcoin1776Units::parse(currentUnit, text, &val);
         if(valid)
         {
-            if(val < 0 || val > BitcoinUnits::maxMoney())
+            if(val < 0 || val > JFKBitcoin1776Units::maxMoney())
                 valid = false;
         }
         if(valid_out)
@@ -178,7 +178,7 @@ protected:
         {
             if(val > 0)
                 rv |= StepDownEnabled;
-            if(val < BitcoinUnits::maxMoney())
+            if(val < JFKBitcoin1776Units::maxMoney())
                 rv |= StepUpEnabled;
         }
         return rv;
@@ -188,9 +188,9 @@ Q_SIGNALS:
     void valueChanged();
 };
 
-#include "bitcoinamountfield.moc"
+#include "jfkbitcoin1776amountfield.moc"
 
-BitcoinAmountField::BitcoinAmountField(QWidget *parent) :
+JFKBitcoin1776AmountField::JFKBitcoin1776AmountField(QWidget *parent) :
     QWidget(parent),
     amount(0)
 {
@@ -202,7 +202,7 @@ BitcoinAmountField::BitcoinAmountField(QWidget *parent) :
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(amount);
     unit = new QValueComboBox(this);
-    unit->setModel(new BitcoinUnits(this));
+    unit->setModel(new JFKBitcoin1776Units(this));
     layout->addWidget(unit);
     layout->addStretch(1);
     layout->setContentsMargins(0,0,0,0);
@@ -220,19 +220,19 @@ BitcoinAmountField::BitcoinAmountField(QWidget *parent) :
     unitChanged(unit->currentIndex());
 }
 
-void BitcoinAmountField::clear()
+void JFKBitcoin1776AmountField::clear()
 {
     amount->clear();
     unit->setCurrentIndex(0);
 }
 
-void BitcoinAmountField::setEnabled(bool fEnabled)
+void JFKBitcoin1776AmountField::setEnabled(bool fEnabled)
 {
     amount->setEnabled(fEnabled);
     unit->setEnabled(fEnabled);
 }
 
-bool BitcoinAmountField::validate()
+bool JFKBitcoin1776AmountField::validate()
 {
     bool valid = false;
     value(&valid);
@@ -240,7 +240,7 @@ bool BitcoinAmountField::validate()
     return valid;
 }
 
-void BitcoinAmountField::setValid(bool valid)
+void JFKBitcoin1776AmountField::setValid(bool valid)
 {
     if (valid)
         amount->setStyleSheet("");
@@ -248,7 +248,7 @@ void BitcoinAmountField::setValid(bool valid)
         amount->setStyleSheet(STYLE_INVALID);
 }
 
-bool BitcoinAmountField::eventFilter(QObject *object, QEvent *event)
+bool JFKBitcoin1776AmountField::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::FocusIn)
     {
@@ -258,45 +258,45 @@ bool BitcoinAmountField::eventFilter(QObject *object, QEvent *event)
     return QWidget::eventFilter(object, event);
 }
 
-QWidget *BitcoinAmountField::setupTabChain(QWidget *prev)
+QWidget *JFKBitcoin1776AmountField::setupTabChain(QWidget *prev)
 {
     QWidget::setTabOrder(prev, amount);
     QWidget::setTabOrder(amount, unit);
     return unit;
 }
 
-CAmount BitcoinAmountField::value(bool *valid_out) const
+CAmount JFKBitcoin1776AmountField::value(bool *valid_out) const
 {
     return amount->value(valid_out);
 }
 
-void BitcoinAmountField::setValue(const CAmount& value)
+void JFKBitcoin1776AmountField::setValue(const CAmount& value)
 {
     amount->setValue(value);
 }
 
-void BitcoinAmountField::setReadOnly(bool fReadOnly)
+void JFKBitcoin1776AmountField::setReadOnly(bool fReadOnly)
 {
     amount->setReadOnly(fReadOnly);
 }
 
-void BitcoinAmountField::unitChanged(int idx)
+void JFKBitcoin1776AmountField::unitChanged(int idx)
 {
     // Use description tooltip for current unit for the combobox
     unit->setToolTip(unit->itemData(idx, Qt::ToolTipRole).toString());
 
     // Determine new unit ID
-    int newUnit = unit->itemData(idx, BitcoinUnits::UnitRole).toInt();
+    int newUnit = unit->itemData(idx, JFKBitcoin1776Units::UnitRole).toInt();
 
     amount->setDisplayUnit(newUnit);
 }
 
-void BitcoinAmountField::setDisplayUnit(int newUnit)
+void JFKBitcoin1776AmountField::setDisplayUnit(int newUnit)
 {
     unit->setValue(newUnit);
 }
 
-void BitcoinAmountField::setSingleStep(const CAmount& step)
+void JFKBitcoin1776AmountField::setSingleStep(const CAmount& step)
 {
     amount->setSingleStep(step);
 }

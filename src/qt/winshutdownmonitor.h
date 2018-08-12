@@ -1,9 +1,9 @@
-// Copyright (c) 2014 The Bitcoin Core developers
+// Copyright (c) 2014 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_WINSHUTDOWNMONITOR_H
-#define BITCOIN_QT_WINSHUTDOWNMONITOR_H
+#ifndef JFKBITCOIN1776_QT_WINSHUTDOWNMONITOR_H
+#define JFKBITCOIN1776_QT_WINSHUTDOWNMONITOR_H
 
 #ifdef WIN32
 #include <QByteArray>
@@ -26,4 +26,4 @@ public:
 #endif
 #endif
 
-#endif // BITCOIN_QT_WINSHUTDOWNMONITOR_H
+#endif // JFKBITCOIN1776_QT_WINSHUTDOWNMONITOR_H

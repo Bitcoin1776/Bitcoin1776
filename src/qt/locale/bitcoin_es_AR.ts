@@ -68,7 +68,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>JFKBitcoin1776GUI</name>
     </context>
 <context>
     <name>CoinControlDialog</name>
@@ -170,6 +170,6 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>jfkbitcoin1776-core</name>
     </context>
 </TS>

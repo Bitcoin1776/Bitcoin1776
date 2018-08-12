@@ -1,13 +1,13 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2016 The Bitcoin Core developers
+// Copyright (c) 2009-2016 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_VALIDATION_H
-#define BITCOIN_VALIDATION_H
+#ifndef JFKBITCOIN1776_VALIDATION_H
+#define JFKBITCOIN1776_VALIDATION_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include "config/jfkbitcoin1776-config.h"
 #endif
 
 #include "amount.h"
@@ -483,4 +483,4 @@ void DumpMempool();
 /** Load the mempool from disk. */
 bool LoadMempool();
 
-#endif // BITCOIN_VALIDATION_H
+#endif // JFKBITCOIN1776_VALIDATION_H

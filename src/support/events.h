@@ -1,9 +1,9 @@
-// Copyright (c) 2016 The Bitcoin Core developers
+// Copyright (c) 2016 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_SUPPORT_EVENTS_H
-#define BITCOIN_SUPPORT_EVENTS_H
+#ifndef JFKBITCOIN1776_SUPPORT_EVENTS_H
+#define JFKBITCOIN1776_SUPPORT_EVENTS_H
 
 #include <ios>
 #include <memory>
@@ -53,4 +53,4 @@ inline raii_evhttp_connection obtain_evhttp_connection_base(struct event_base* b
     return result;
 }
 
-#endif // BITCOIN_SUPPORT_EVENTS_H
+#endif // JFKBITCOIN1776_SUPPORT_EVENTS_H

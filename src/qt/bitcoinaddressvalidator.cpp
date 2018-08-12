@@ -1,8 +1,8 @@
-// Copyright (c) 2011-2014 The Bitcoin Core developers
+// Copyright (c) 2011-2014 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "bitcoinaddressvalidator.h"
+#include "jfkbitcoin1776addressvalidator.h"
 
 #include "base58.h"
 
@@ -15,12 +15,12 @@
   - All lower-case letters except for 'l'
 */
 
-BitcoinAddressEntryValidator::BitcoinAddressEntryValidator(QObject *parent) :
+JFKBitcoin1776AddressEntryValidator::JFKBitcoin1776AddressEntryValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State BitcoinAddressEntryValidator::validate(QString &input, int &pos) const
+QValidator::State JFKBitcoin1776AddressEntryValidator::validate(QString &input, int &pos) const
 {
     Q_UNUSED(pos);
 
@@ -80,16 +80,16 @@ QValidator::State BitcoinAddressEntryValidator::validate(QString &input, int &po
     return state;
 }
 
-BitcoinAddressCheckValidator::BitcoinAddressCheckValidator(QObject *parent) :
+JFKBitcoin1776AddressCheckValidator::JFKBitcoin1776AddressCheckValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State BitcoinAddressCheckValidator::validate(QString &input, int &pos) const
+QValidator::State JFKBitcoin1776AddressCheckValidator::validate(QString &input, int &pos) const
 {
     Q_UNUSED(pos);
-    // Validate the passed Bitcoin address
-    CBitcoinAddress addr(input.toStdString());
+    // Validate the passed JFKBitcoin1776 address
+    CJFKBitcoin1776Address addr(input.toStdString());
     if (addr.IsValid())
         return QValidator::Acceptable;
 

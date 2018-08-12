@@ -1,13 +1,13 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Bitcoin Core
-Comment=Connect to the Bitcoin P2P Network
-Comment[de]=Verbinde mit dem Bitcoin peer-to-peer Netzwerk
-Comment[fr]=Bitcoin, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Bitcoin, eşten eşe kriptografik sanal para birimi
-Exec=bitcoin-qt %u
+Name=JFKBitcoin1776 Core
+Comment=Connect to the JFKBitcoin1776 P2P Network
+Comment[de]=Verbinde mit dem JFKBitcoin1776 peer-to-peer Netzwerk
+Comment[fr]=JFKBitcoin1776, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=JFKBitcoin1776, eşten eşe kriptografik sanal para birimi
+Exec=jfkbitcoin1776-qt %u
 Terminal=false
 Type=Application
-Icon=bitcoin128
-MimeType=x-scheme-handler/bitcoin;
+Icon=jfkbitcoin1776128
+MimeType=x-scheme-handler/jfkbitcoin1776;
 Categories=Office;Finance;

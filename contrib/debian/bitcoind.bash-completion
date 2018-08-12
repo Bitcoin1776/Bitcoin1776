@@ -1,2 +1,2 @@
-contrib/bitcoind.bash-completion	bitcoind
-contrib/bitcoin-cli.bash-completion	bitcoin-cli
+contrib/jfkbitcoin1776d.bash-completion	jfkbitcoin1776d
+contrib/jfkbitcoin1776-cli.bash-completion	jfkbitcoin1776-cli

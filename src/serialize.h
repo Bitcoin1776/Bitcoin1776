@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2016 The Bitcoin Core developers
+// Copyright (c) 2009-2016 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_SERIALIZE_H
-#define BITCOIN_SERIALIZE_H
+#ifndef JFKBITCOIN1776_SERIALIZE_H
+#define JFKBITCOIN1776_SERIALIZE_H
 
 #include "compat/endian.h"
 
@@ -963,4 +963,4 @@ size_t GetSerializeSize(const S& s, const T& t)
     return (CSizeComputer(s.GetType(), s.GetVersion()) << t).size();
 }
 
-#endif // BITCOIN_SERIALIZE_H
+#endif // JFKBITCOIN1776_SERIALIZE_H

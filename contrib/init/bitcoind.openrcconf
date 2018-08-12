@@ -1,33 +1,33 @@
-# /etc/conf.d/bitcoind: config file for /etc/init.d/bitcoind
+# /etc/conf.d/jfkbitcoin1776d: config file for /etc/init.d/jfkbitcoin1776d
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/bitcoin/bitcoin.conf"
+#JFKBITCOIN1776D_CONFIGFILE="/etc/jfkbitcoin1776/jfkbitcoin1776.conf"
 
-# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/bitcoind"
+# What directory to write pidfile to?  (created and owned by $JFKBITCOIN1776D_USER)
+#JFKBITCOIN1776D_PIDDIR="/var/run/jfkbitcoin1776d"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/bitcoind.pid"
+#JFKBITCOIN1776D_PIDFILE="${JFKBITCOIN1776D_PIDDIR}/jfkbitcoin1776d.pid"
 
-# Where to write bitcoind data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/bitcoind"
+# Where to write jfkbitcoin1776d data (be mindful that the blockchain is large)
+#JFKBITCOIN1776D_DATADIR="/var/lib/jfkbitcoin1776d"
 
-# User and group to own bitcoind process
-#BITCOIND_USER="bitcoin"
-#BITCOIND_GROUP="bitcoin"
+# User and group to own jfkbitcoin1776d process
+#JFKBITCOIN1776D_USER="jfkbitcoin1776"
+#JFKBITCOIN1776D_GROUP="jfkbitcoin1776"
 
-# Path to bitcoind executable
-#BITCOIND_BIN="/usr/bin/bitcoind"
+# Path to jfkbitcoin1776d executable
+#JFKBITCOIN1776D_BIN="/usr/bin/jfkbitcoin1776d"
 
-# Nice value to run bitcoind under
-#BITCOIND_NICE=0
+# Nice value to run jfkbitcoin1776d under
+#JFKBITCOIN1776D_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)
-#BITCOIND_OPTS=""
+#JFKBITCOIN1776D_OPTS=""
 
-# The timeout in seconds OpenRC will wait for bitcoind to terminate
+# The timeout in seconds OpenRC will wait for jfkbitcoin1776d to terminate
 # after a SIGTERM has been raised.
 # Note that this will be mapped as argument to start-stop-daemon's
 # '--retry' option, which means you can specify a retry schedule
 # here. For more information see man 8 start-stop-daemon.
-BITCOIND_SIGTERM_TIMEOUT=60
+JFKBITCOIN1776D_SIGTERM_TIMEOUT=60

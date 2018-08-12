@@ -18,4 +18,4 @@ FORMS += \
     ../src/qt/forms/transactiondescdialog.ui \
 
 RESOURCES += \
-    ../src/qt/bitcoin.qrc
+    ../src/qt/jfkbitcoin1776.qrc

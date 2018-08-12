@@ -12,10 +12,10 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>JFKBitcoin1776GUI</name>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>JFKBitcoin1776</source>
+        <translation>JFKBitcoin1776</translation>
     </message>
     </context>
 <context>
@@ -154,10 +154,10 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>jfkbitcoin1776-core</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Jezrga</translation>
+        <source>JFKBitcoin1776 Core</source>
+        <translation>JFKBitcoin1776 Jezrga</translation>
     </message>
     </context>
 </TS>

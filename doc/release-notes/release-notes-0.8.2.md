@@ -1,11 +1,11 @@
-Bitcoin-Qt version 0.8.2 is now available from:
-  http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.8.2/
+JFKBitcoin1776-Qt version 0.8.2 is now available from:
+  http://sourceforge.net/projects/jfkbitcoin1776/files/JFKBitcoin1776/jfkbitcoin1776-0.8.2/
 
 This is a maintenance release that fixes many bugs and includes
 a few small new features.
 
 Please report bugs using the issue tracker at github:
-  https://github.com/bitcoin/bitcoin/issues
+  https://github.com/jfkbitcoin1776/jfkbitcoin1776/issues
 
 
 How to Upgrade
@@ -13,7 +13,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait
 until it has completely shut down (which might take a few minutes for older
 versions), then run the installer (on Windows) or just copy over
-/Applications/Bitcoin-Qt (on Mac) or bitcoind/bitcoin-qt (on Linux).
+/Applications/JFKBitcoin1776-Qt (on Mac) or jfkbitcoin1776d/jfkbitcoin1776-qt (on Linux).
 
 If you are upgrading from version 0.7.2 or earlier, the first time you
 run 0.8.2 your blockchain files will be re-indexed, which will take
@@ -24,12 +24,12 @@ your machine.
 
 Fee Policy changes
 
-The default fee for low-priority transactions is lowered from 0.0005 BTC 
+The default fee for low-priority transactions is lowered from 0.0005 JFK 
 (for each 1,000 bytes in the transaction; an average transaction is
-about 500 bytes) to 0.0001 BTC.
+about 500 bytes) to 0.0001 JFK.
 
 Payments (transaction outputs) of 0.543 times the minimum relay fee
-(0.00005430 BTC) are now considered 'non-standard', because storing them
+(0.00005430 JFK) are now considered 'non-standard', because storing them
 costs the network more than they are worth and spending them will usually
 cost their owner more in transaction fees than they are worth.
 
@@ -43,7 +43,7 @@ with code that automatically calculates and suggests appropriate fees in the
 0.9 release and note that if you set a fee policy significantly different from
 the rest of the network your transactions may never confirm.
 
-Bitcoin-Qt changes
+JFKBitcoin1776-Qt changes
 
 * New icon and splash screen
 * Improve reporting of synchronization process
@@ -58,7 +58,7 @@ Bitcoin-Qt changes
   to current translations
 
 MacOSX:
-* OSX support for click-to-pay (bitcoin:) links
+* OSX support for click-to-pay (jfkbitcoin1776:) links
 * Fix GUI disappearing problem on MacOSX (issue #1522)
 
 Linux/Unix:
@@ -97,8 +97,8 @@ Wallet compatibility/rescuing
 
 Known Bugs
 
-* Entering the 'getblocktemplate' or 'getwork' RPC commands into the Bitcoin-Qt debug
-console will cause Bitcoin-Qt to crash. Run Bitcoin-Qt with the -server command-line
+* Entering the 'getblocktemplate' or 'getwork' RPC commands into the JFKBitcoin1776-Qt debug
+console will cause JFKBitcoin1776-Qt to crash. Run JFKBitcoin1776-Qt with the -server command-line
 option to workaround.
 
 Thanks to everybody who contributed to the 0.8.2 release!

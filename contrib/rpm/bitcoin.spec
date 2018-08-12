@@ -13,31 +13,31 @@
 %endif
 %endif
 
-Name:		bitcoin
+Name:		jfkbitcoin1776
 Version:	0.12.0
 Release:	2%{?dist}
 Summary:	Peer to Peer Cryptographic Currency
 
 Group:		Applications/System
 License:	MIT
-URL:		https://bitcoin.org/
-Source0:	https://bitcoin.org/bin/bitcoin-core-%{version}/bitcoin-%{version}.tar.gz
+URL:		https://jfkbitcoin1776.org/
+Source0:	https://jfkbitcoin1776.org/bin/jfkbitcoin1776-core-%{version}/jfkbitcoin1776-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/debian/examples/bitcoin.conf
+Source10:	https://raw.githubusercontent.com/jfkbitcoin1776/jfkbitcoin1776/v%{version}/contrib/debian/examples/jfkbitcoin1776.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/doc/man/bitcoind.1
-Source21:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/doc/man/bitcoin-cli.1
-Source22:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/doc/man/bitcoin-qt.1
+Source20:	https://raw.githubusercontent.com/jfkbitcoin1776/jfkbitcoin1776/v%{version}/doc/man/jfkbitcoin1776d.1
+Source21:	https://raw.githubusercontent.com/jfkbitcoin1776/jfkbitcoin1776/v%{version}/doc/man/jfkbitcoin1776-cli.1
+Source22:	https://raw.githubusercontent.com/jfkbitcoin1776/jfkbitcoin1776/v%{version}/doc/man/jfkbitcoin1776-qt.1
 
 #selinux
-Source30:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/rpm/bitcoin.te
-# Source31 - what about bitcoin-tx and bench_bitcoin ???
-Source31:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/rpm/bitcoin.fc
-Source32:	https://raw.githubusercontent.com/bitcoin/bitcoin/v%{version}/contrib/rpm/bitcoin.if
+Source30:	https://raw.githubusercontent.com/jfkbitcoin1776/jfkbitcoin1776/v%{version}/contrib/rpm/jfkbitcoin1776.te
+# Source31 - what about jfkbitcoin1776-tx and bench_jfkbitcoin1776 ???
+Source31:	https://raw.githubusercontent.com/jfkbitcoin1776/jfkbitcoin1776/v%{version}/contrib/rpm/jfkbitcoin1776.fc
+Source32:	https://raw.githubusercontent.com/jfkbitcoin1776/jfkbitcoin1776/v%{version}/contrib/rpm/jfkbitcoin1776.if
 
-Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg
+Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/JFKBitcoin1776.svg
 
 %if 0%{?_use_libressl:1}
 BuildRequires:	libressl-devel
@@ -50,13 +50,13 @@ BuildRequires:	autoconf automake libtool
 BuildRequires:	libevent-devel
 
 
-Patch0:		bitcoin-0.12.0-libressl.patch
+Patch0:		jfkbitcoin1776-0.12.0-libressl.patch
 
 
 %description
-Bitcoin is a digital cryptographic currency that uses peer-to-peer technology to
+JFKBitcoin1776 is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of bitcoins is carried out collectively by the network.
+issuing of jfkbitcoin1776s is carried out collectively by the network.
 
 %if %{_buildqt}
 %package core
@@ -79,42 +79,42 @@ BuildRequires:	%{_bindir}/inkscape
 BuildRequires:	%{_bindir}/convert
 
 %description core
-Bitcoin is a digital cryptographic currency that uses peer-to-peer technology to
+JFKBitcoin1776 is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of bitcoins is carried out collectively by the network.
+issuing of jfkbitcoin1776s is carried out collectively by the network.
 
 This package contains the Qt based graphical client and node. If you are looking
-to run a Bitcoin wallet, this is probably the package you want.
+to run a JFKBitcoin1776 wallet, this is probably the package you want.
 %endif
 
 
 %package libs
-Summary:	Bitcoin shared libraries
+Summary:	JFKBitcoin1776 shared libraries
 Group:		System Environment/Libraries
 
 %description libs
-This package provides the bitcoinconsensus shared libraries. These libraries
+This package provides the jfkbitcoin1776consensus shared libraries. These libraries
 may be used by third party software to provide consensus verification
 functionality.
 
 Unless you know need this package, you probably do not.
 
 %package devel
-Summary:	Development files for bitcoin
+Summary:	Development files for jfkbitcoin1776
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
 This package contains the header files and static library for the
-bitcoinconsensus shared library. If you are developing or compiling software
+jfkbitcoin1776consensus shared library. If you are developing or compiling software
 that wants to link against that library, then you need this package installed.
 
 Most people do not need this package installed.
 
 %package server
-Summary:	The bitcoin daemon
+Summary:	The jfkbitcoin1776 daemon
 Group:		System Environment/Daemons
-Requires:	bitcoin-utils = %{version}-%{release}
+Requires:	jfkbitcoin1776-utils = %{version}-%{release}
 Requires:	selinux-policy policycoreutils-python
 Requires(pre):	shadow-utils
 Requires(post):	%{_sbindir}/semodule %{_sbindir}/restorecon %{_sbindir}/fixfiles %{_sbindir}/sestatus
@@ -124,34 +124,34 @@ BuildRequires:	checkpolicy
 BuildRequires:	%{_datadir}/selinux/devel/Makefile
 
 %description server
-This package provides a stand-alone bitcoin-core daemon. For most users, this
+This package provides a stand-alone jfkbitcoin1776-core daemon. For most users, this
 package is only needed if they need a full-node without the graphical client.
 
 Some third party wallet software will want this package to provide the actual
-bitcoin-core node they use to connect to the network.
+jfkbitcoin1776-core node they use to connect to the network.
 
-If you use the graphical bitcoin-core client then you almost certainly do not
+If you use the graphical jfkbitcoin1776-core client then you almost certainly do not
 need this package.
 
 %package utils
-Summary:	Bitcoin utilities
+Summary:	JFKBitcoin1776 utilities
 Group:		Applications/System
 
 %description utils
 This package provides several command line utilities for interacting with a
-bitcoin-core daemon.
+jfkbitcoin1776-core daemon.
 
-The bitcoin-cli utility allows you to communicate and control a bitcoin daemon
-over RPC, the bitcoin-tx utility allows you to create a custom transaction, and
-the bench_bitcoin utility can be used to perform some benchmarks.
+The jfkbitcoin1776-cli utility allows you to communicate and control a jfkbitcoin1776 daemon
+over RPC, the jfkbitcoin1776-tx utility allows you to create a custom transaction, and
+the bench_jfkbitcoin1776 utility can be used to perform some benchmarks.
 
-This package contains utilities needed by the bitcoin-server package.
+This package contains utilities needed by the jfkbitcoin1776-server package.
 
 
 %prep
 %setup -q
 %patch0 -p1 -b .libressl
-cp -p %{SOURCE10} ./bitcoin.conf.example
+cp -p %{SOURCE10} ./jfkbitcoin1776.conf.example
 tar -zxf %{SOURCE1}
 cp -p db-%{bdbv}.NC/LICENSE ./db-%{bdbv}.NC-LICENSE
 mkdir db4 SELinux
@@ -172,7 +172,7 @@ make %{?_smp_mflags}
 pushd SELinux
 for selinuxvariant in %{selinux_variants}; do
 	make NAME=${selinuxvariant} -f %{_datadir}/selinux/devel/Makefile
-	mv bitcoin.pp bitcoin.pp.${selinuxvariant}
+	mv jfkbitcoin1776.pp jfkbitcoin1776.pp.${selinuxvariant}
 	make NAME=${selinuxvariant} -f %{_datadir}/selinux/devel/Makefile clean
 done
 popd
@@ -182,42 +182,42 @@ popd
 make install DESTDIR=%{buildroot}
 
 mkdir -p -m755 %{buildroot}%{_sbindir}
-mv %{buildroot}%{_bindir}/bitcoind %{buildroot}%{_sbindir}/bitcoind
+mv %{buildroot}%{_bindir}/jfkbitcoin1776d %{buildroot}%{_sbindir}/jfkbitcoin1776d
 
 # systemd stuff
 mkdir -p %{buildroot}%{_tmpfilesdir}
-cat <<EOF > %{buildroot}%{_tmpfilesdir}/bitcoin.conf
-d /run/bitcoind 0750 bitcoin bitcoin -
+cat <<EOF > %{buildroot}%{_tmpfilesdir}/jfkbitcoin1776.conf
+d /run/jfkbitcoin1776d 0750 jfkbitcoin1776 jfkbitcoin1776 -
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/bitcoin.conf
+touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/jfkbitcoin1776.conf
 
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
-cat <<EOF > %{buildroot}%{_sysconfdir}/sysconfig/bitcoin
-# Provide options to the bitcoin daemon here, for example
+cat <<EOF > %{buildroot}%{_sysconfdir}/sysconfig/jfkbitcoin1776
+# Provide options to the jfkbitcoin1776 daemon here, for example
 # OPTIONS="-testnet -disable-wallet"
 
 OPTIONS=""
 
 # System service defaults.
 # Don't change these unless you know what you're doing.
-CONFIG_FILE="%{_sysconfdir}/bitcoin/bitcoin.conf"
-DATA_DIR="%{_localstatedir}/lib/bitcoin"
-PID_FILE="/run/bitcoind/bitcoind.pid"
+CONFIG_FILE="%{_sysconfdir}/jfkbitcoin1776/jfkbitcoin1776.conf"
+DATA_DIR="%{_localstatedir}/lib/jfkbitcoin1776"
+PID_FILE="/run/jfkbitcoin1776d/jfkbitcoin1776d.pid"
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/bitcoin
+touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/jfkbitcoin1776
 
 mkdir -p %{buildroot}%{_unitdir}
-cat <<EOF > %{buildroot}%{_unitdir}/bitcoin.service
+cat <<EOF > %{buildroot}%{_unitdir}/jfkbitcoin1776.service
 [Unit]
-Description=Bitcoin daemon
+Description=JFKBitcoin1776 daemon
 After=syslog.target network.target
 
 [Service]
 Type=forking
-ExecStart=%{_sbindir}/bitcoind -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
-EnvironmentFile=%{_sysconfdir}/sysconfig/bitcoin
-User=bitcoin
-Group=bitcoin
+ExecStart=%{_sbindir}/jfkbitcoin1776d -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
+EnvironmentFile=%{_sysconfdir}/sysconfig/jfkbitcoin1776
+User=jfkbitcoin1776
+Group=jfkbitcoin1776
 
 Restart=on-failure
 PrivateTmp=true
@@ -229,63 +229,63 @@ StartLimitBurst=5
 [Install]
 WantedBy=multi-user.target
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_unitdir}/bitcoin.service
+touch -a -m -t 201504280000 %{buildroot}%{_unitdir}/jfkbitcoin1776.service
 #end systemd stuff
 
-mkdir %{buildroot}%{_sysconfdir}/bitcoin
-mkdir -p %{buildroot}%{_localstatedir}/lib/bitcoin
+mkdir %{buildroot}%{_sysconfdir}/jfkbitcoin1776
+mkdir -p %{buildroot}%{_localstatedir}/lib/jfkbitcoin1776
 
 #SELinux
 for selinuxvariant in %{selinux_variants}; do
 	install -d %{buildroot}%{_datadir}/selinux/${selinuxvariant}
-	install -p -m 644 SELinux/bitcoin.pp.${selinuxvariant} %{buildroot}%{_datadir}/selinux/${selinuxvariant}/bitcoin.pp
+	install -p -m 644 SELinux/jfkbitcoin1776.pp.${selinuxvariant} %{buildroot}%{_datadir}/selinux/${selinuxvariant}/jfkbitcoin1776.pp
 done
 
 %if %{_buildqt}
 # qt icons
-install -D -p share/pixmaps/bitcoin.ico %{buildroot}%{_datadir}/pixmaps/bitcoin.ico
+install -D -p share/pixmaps/jfkbitcoin1776.ico %{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776.ico
 install -p share/pixmaps/nsis-header.bmp %{buildroot}%{_datadir}/pixmaps/
 install -p share/pixmaps/nsis-wizard.bmp %{buildroot}%{_datadir}/pixmaps/
-install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/bitcoin.svg
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin16.png -w16 -h16
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin32.png -w32 -h32
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin64.png -w64 -h64
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin128.png -w128 -h128
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/bitcoin256.png -w256 -h256
-%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin16.xpm
-%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin32.xpm
-%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin64.xpm
-%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin128.xpm
-%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/bitcoin256.png %{buildroot}%{_datadir}/pixmaps/bitcoin256.xpm
+install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776.svg
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/jfkbitcoin177616.png -w16 -h16
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/jfkbitcoin177632.png -w32 -h32
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/jfkbitcoin177664.png -w64 -h64
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776128.png -w128 -h128
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776256.png -w256 -h256
+%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776256.png %{buildroot}%{_datadir}/pixmaps/jfkbitcoin177616.xpm
+%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776256.png %{buildroot}%{_datadir}/pixmaps/jfkbitcoin177632.xpm
+%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776256.png %{buildroot}%{_datadir}/pixmaps/jfkbitcoin177664.xpm
+%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776256.png %{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776128.xpm
+%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776256.png %{buildroot}%{_datadir}/pixmaps/jfkbitcoin1776256.xpm
 touch %{buildroot}%{_datadir}/pixmaps/*.png -r %{SOURCE100}
 touch %{buildroot}%{_datadir}/pixmaps/*.xpm -r %{SOURCE100}
 
 # Desktop File - change the touch timestamp if modifying
 mkdir -p %{buildroot}%{_datadir}/applications
-cat <<EOF > %{buildroot}%{_datadir}/applications/bitcoin-core.desktop
+cat <<EOF > %{buildroot}%{_datadir}/applications/jfkbitcoin1776-core.desktop
 [Desktop Entry]
 Encoding=UTF-8
-Name=Bitcoin
-Comment=Bitcoin P2P Cryptocurrency
-Comment[fr]=Bitcoin, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Bitcoin, eşten eşe kriptografik sanal para birimi
-Exec=bitcoin-qt %u
+Name=JFKBitcoin1776
+Comment=JFKBitcoin1776 P2P Cryptocurrency
+Comment[fr]=JFKBitcoin1776, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=JFKBitcoin1776, eşten eşe kriptografik sanal para birimi
+Exec=jfkbitcoin1776-qt %u
 Terminal=false
 Type=Application
-Icon=bitcoin128
-MimeType=x-scheme-handler/bitcoin;
+Icon=jfkbitcoin1776128
+MimeType=x-scheme-handler/jfkbitcoin1776;
 Categories=Office;Finance;
 EOF
 # change touch date when modifying desktop
-touch -a -m -t 201511100546 %{buildroot}%{_datadir}/applications/bitcoin-core.desktop
-%{_bindir}/desktop-file-validate %{buildroot}%{_datadir}/applications/bitcoin-core.desktop
+touch -a -m -t 201511100546 %{buildroot}%{_datadir}/applications/jfkbitcoin1776-core.desktop
+%{_bindir}/desktop-file-validate %{buildroot}%{_datadir}/applications/jfkbitcoin1776-core.desktop
 
 # KDE protocol - change the touch timestamp if modifying
 mkdir -p %{buildroot}%{_datadir}/kde4/services
-cat <<EOF > %{buildroot}%{_datadir}/kde4/services/bitcoin-core.protocol
+cat <<EOF > %{buildroot}%{_datadir}/kde4/services/jfkbitcoin1776-core.protocol
 [Protocol]
-exec=bitcoin-qt '%u'
-protocol=bitcoin
+exec=jfkbitcoin1776-qt '%u'
+protocol=jfkbitcoin1776
 input=none
 output=none
 helper=true
@@ -296,14 +296,14 @@ makedir=false
 deleting=false
 EOF
 # change touch date when modifying protocol
-touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/bitcoin-core.protocol
+touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/jfkbitcoin1776-core.protocol
 %endif
 
 # man pages
-install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/bitcoind.1
-install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/bitcoin-cli.1
+install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/jfkbitcoin1776d.1
+install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/jfkbitcoin1776-cli.1
 %if %{_buildqt}
-install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/bitcoin-qt.1
+install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/jfkbitcoin1776-qt.1
 %endif
 
 # nuke these, we do extensive testing of binaries in %%check before packaging
@@ -311,7 +311,7 @@ rm -f %{buildroot}%{_bindir}/test_*
 
 %check
 make check
-srcdir=src test/bitcoin-util-test.py
+srcdir=src test/jfkbitcoin1776-util-test.py
 test/functional/test_runner.py --extended
 
 %post libs -p /sbin/ldconfig
@@ -319,35 +319,35 @@ test/functional/test_runner.py --extended
 %postun libs -p /sbin/ldconfig
 
 %pre server
-getent group bitcoin >/dev/null || groupadd -r bitcoin
-getent passwd bitcoin >/dev/null ||
-	useradd -r -g bitcoin -d /var/lib/bitcoin -s /sbin/nologin \
-	-c "Bitcoin wallet server" bitcoin
+getent group jfkbitcoin1776 >/dev/null || groupadd -r jfkbitcoin1776
+getent passwd jfkbitcoin1776 >/dev/null ||
+	useradd -r -g jfkbitcoin1776 -d /var/lib/jfkbitcoin1776 -s /sbin/nologin \
+	-c "JFKBitcoin1776 wallet server" jfkbitcoin1776
 exit 0
 
 %post server
-%systemd_post bitcoin.service
+%systemd_post jfkbitcoin1776.service
 # SELinux
 if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
 for selinuxvariant in %{selinux_variants}; do
-	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/bitcoin.pp &> /dev/null || :
+	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/jfkbitcoin1776.pp &> /dev/null || :
 done
-%{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 8332
-%{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 8333
-%{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 18332
-%{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 18333
-%{_sbindir}/fixfiles -R bitcoin-server restore &> /dev/null || :
-%{_sbindir}/restorecon -R %{_localstatedir}/lib/bitcoin || :
+%{_sbindir}/semanage port -a -t jfkbitcoin1776_port_t -p tcp 8332
+%{_sbindir}/semanage port -a -t jfkbitcoin1776_port_t -p tcp 8333
+%{_sbindir}/semanage port -a -t jfkbitcoin1776_port_t -p tcp 18332
+%{_sbindir}/semanage port -a -t jfkbitcoin1776_port_t -p tcp 18333
+%{_sbindir}/fixfiles -R jfkbitcoin1776-server restore &> /dev/null || :
+%{_sbindir}/restorecon -R %{_localstatedir}/lib/jfkbitcoin1776 || :
 fi
 
 %posttrans server
 %{_bindir}/systemd-tmpfiles --create
 
 %preun server
-%systemd_preun bitcoin.service
+%systemd_preun jfkbitcoin1776.service
 
 %postun server
-%systemd_postun bitcoin.service
+%systemd_postun jfkbitcoin1776.service
 # SELinux
 if [ $1 -eq 0 ]; then
 	if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
@@ -356,11 +356,11 @@ if [ $1 -eq 0 ]; then
 	%{_sbindir}/semanage port -d -p tcp 18332
 	%{_sbindir}/semanage port -d -p tcp 18333
 	for selinuxvariant in %{selinux_variants}; do
-		%{_sbindir}/semodule -s ${selinuxvariant} -r bitcoin &> /dev/null || :
+		%{_sbindir}/semodule -s ${selinuxvariant} -r jfkbitcoin1776 &> /dev/null || :
 	done
-	%{_sbindir}/fixfiles -R bitcoin-server restore &> /dev/null || :
-	[ -d %{_localstatedir}/lib/bitcoin ] && \
-		%{_sbindir}/restorecon -R %{_localstatedir}/lib/bitcoin &> /dev/null || :
+	%{_sbindir}/fixfiles -R jfkbitcoin1776-server restore &> /dev/null || :
+	[ -d %{_localstatedir}/lib/jfkbitcoin1776 ] && \
+		%{_sbindir}/restorecon -R %{_localstatedir}/lib/jfkbitcoin1776 &> /dev/null || :
 	fi
 fi
 
@@ -371,16 +371,16 @@ rm -rf %{buildroot}
 %files core
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
-%doc COPYING bitcoin.conf.example doc/README.md doc/bips.md doc/files.md doc/multiwallet-qt.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_bindir}/bitcoin-qt
-%attr(0644,root,root) %{_datadir}/applications/bitcoin-core.desktop
-%attr(0644,root,root) %{_datadir}/kde4/services/bitcoin-core.protocol
+%doc COPYING jfkbitcoin1776.conf.example doc/README.md doc/bips.md doc/files.md doc/multiwallet-qt.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
+%attr(0755,root,root) %{_bindir}/jfkbitcoin1776-qt
+%attr(0644,root,root) %{_datadir}/applications/jfkbitcoin1776-core.desktop
+%attr(0644,root,root) %{_datadir}/kde4/services/jfkbitcoin1776-core.protocol
 %attr(0644,root,root) %{_datadir}/pixmaps/*.ico
 %attr(0644,root,root) %{_datadir}/pixmaps/*.bmp
 %attr(0644,root,root) %{_datadir}/pixmaps/*.svg
 %attr(0644,root,root) %{_datadir}/pixmaps/*.png
 %attr(0644,root,root) %{_datadir}/pixmaps/*.xpm
-%attr(0644,root,root) %{_mandir}/man1/bitcoin-qt.1*
+%attr(0644,root,root) %{_mandir}/man1/jfkbitcoin1776-qt.1*
 %endif
 
 %files libs
@@ -402,30 +402,30 @@ rm -rf %{buildroot}
 %files server
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
-%doc COPYING bitcoin.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_sbindir}/bitcoind
-%attr(0644,root,root) %{_tmpfilesdir}/bitcoin.conf
-%attr(0644,root,root) %{_unitdir}/bitcoin.service
-%dir %attr(0750,bitcoin,bitcoin) %{_sysconfdir}/bitcoin
-%dir %attr(0750,bitcoin,bitcoin) %{_localstatedir}/lib/bitcoin
-%config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/bitcoin
+%doc COPYING jfkbitcoin1776.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
+%attr(0755,root,root) %{_sbindir}/jfkbitcoin1776d
+%attr(0644,root,root) %{_tmpfilesdir}/jfkbitcoin1776.conf
+%attr(0644,root,root) %{_unitdir}/jfkbitcoin1776.service
+%dir %attr(0750,jfkbitcoin1776,jfkbitcoin1776) %{_sysconfdir}/jfkbitcoin1776
+%dir %attr(0750,jfkbitcoin1776,jfkbitcoin1776) %{_localstatedir}/lib/jfkbitcoin1776
+%config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/jfkbitcoin1776
 %attr(0644,root,root) %{_datadir}/selinux/*/*.pp
-%attr(0644,root,root) %{_mandir}/man1/bitcoind.1*
+%attr(0644,root,root) %{_mandir}/man1/jfkbitcoin1776d.1*
 
 %files utils
 %defattr(-,root,root,-)
 %license COPYING
-%doc COPYING bitcoin.conf.example doc/README.md
-%attr(0755,root,root) %{_bindir}/bitcoin-cli
-%attr(0755,root,root) %{_bindir}/bitcoin-tx
-%attr(0755,root,root) %{_bindir}/bench_bitcoin
-%attr(0644,root,root) %{_mandir}/man1/bitcoin-cli.1*
+%doc COPYING jfkbitcoin1776.conf.example doc/README.md
+%attr(0755,root,root) %{_bindir}/jfkbitcoin1776-cli
+%attr(0755,root,root) %{_bindir}/jfkbitcoin1776-tx
+%attr(0755,root,root) %{_bindir}/bench_jfkbitcoin1776
+%attr(0644,root,root) %{_mandir}/man1/jfkbitcoin1776-cli.1*
 
 
 
 %changelog
 * Fri Feb 26 2016 Alice Wonder <buildmaster@librelamp.com> - 0.12.0-2
-- Rename Qt package from bitcoin to bitcoin-core
+- Rename Qt package from jfkbitcoin1776 to jfkbitcoin1776-core
 - Make building of the Qt package optional
 - When building the Qt package, default to Qt5 but allow building
 -  against Qt4
@@ -435,4 +435,4 @@ rm -rf %{buildroot}
 - Initial spec file for 0.12.0 release
 
 # This spec file is written from scratch but a lot of the packaging decisions are directly
-# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/bitcoin/
+# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/jfkbitcoin1776/

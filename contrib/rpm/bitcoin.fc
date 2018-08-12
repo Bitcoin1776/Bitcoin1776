@@ -1,8 +1,8 @@
-/usr/bin/bitcoin-cli		--	gen_context(system_u:object_r:bitcoin_exec_t,s0)
-/usr/sbin/bitcoind		--	gen_context(system_u:object_r:bitcoin_exec_t,s0)
-/usr/lib(64)?/bitcoin/bitcoind		--	gen_context(system_u:object_r:bitcoin_exec_t,s0)
+/usr/bin/jfkbitcoin1776-cli		--	gen_context(system_u:object_r:jfkbitcoin1776_exec_t,s0)
+/usr/sbin/jfkbitcoin1776d		--	gen_context(system_u:object_r:jfkbitcoin1776_exec_t,s0)
+/usr/lib(64)?/jfkbitcoin1776/jfkbitcoin1776d		--	gen_context(system_u:object_r:jfkbitcoin1776_exec_t,s0)
 
-/etc/bitcoin(/.*)?		gen_context(system_u:object_r:bitcoin_conf_t,s0)
-/var/lib/bitcoin(/.*)?		gen_context(system_u:object_r:bitcoin_var_lib_t,s0)
+/etc/jfkbitcoin1776(/.*)?		gen_context(system_u:object_r:jfkbitcoin1776_conf_t,s0)
+/var/lib/jfkbitcoin1776(/.*)?		gen_context(system_u:object_r:jfkbitcoin1776_var_lib_t,s0)
 
-(/var)?/run/bitcoind(/.*)?   gen_context(system_u:object_r:bitcoin_var_run_t,s0)
+(/var)?/run/jfkbitcoin1776d(/.*)?   gen_context(system_u:object_r:jfkbitcoin1776_var_run_t,s0)

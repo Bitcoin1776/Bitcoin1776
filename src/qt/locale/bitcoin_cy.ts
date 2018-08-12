@@ -84,7 +84,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>JFKBitcoin1776GUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Cysoni â'r rhwydwaith...</translation>
@@ -154,8 +154,8 @@
         <translation>Newid y cyfrinymadrodd a ddefnyddiwyd ar gyfer amgryptio'r waled</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>JFKBitcoin1776</source>
+        <translation>JFKBitcoin1776</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -634,14 +634,14 @@
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>jfkbitcoin1776-core</name>
     <message>
         <source>Options:</source>
         <translation>Opsiynau:</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Craidd Bitcoin</translation>
+        <source>JFKBitcoin1776 Core</source>
+        <translation>Craidd JFKBitcoin1776</translation>
     </message>
     <message>
         <source>Information</source>

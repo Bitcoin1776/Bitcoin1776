@@ -1,10 +1,10 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2016 The Bitcoin Core developers
+// Copyright (c) 2009-2016 The JFKBitcoin1776 Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_RPCSERVER_H
-#define BITCOIN_RPCSERVER_H
+#ifndef JFKBITCOIN1776_RPCSERVER_H
+#define JFKBITCOIN1776_RPCSERVER_H
 
 #include "amount.h"
 #include "rpc/protocol.h"
@@ -139,7 +139,7 @@ public:
 };
 
 /**
- * Bitcoin RPC command dispatcher.
+ * JFKBitcoin1776 RPC command dispatcher.
  */
 class CRPCTable
 {
@@ -196,4 +196,4 @@ std::string JSONRPCExecBatch(const JSONRPCRequest& jreq, const UniValue& vReq);
 // Retrieves any serialization flags requested in command line argument
 int RPCSerializationFlags();
 
-#endif // BITCOIN_RPCSERVER_H
+#endif // JFKBITCOIN1776_RPCSERVER_H
