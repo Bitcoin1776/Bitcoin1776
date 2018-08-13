@@ -1,4 +1,4 @@
-# Copyright (c) 2013-2016 The JFKBitcoin1776 Core developers
+# Copyright (c) 2013-2016 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -278,6 +278,7 @@ libjfkbitcoin1776_consensus_a_SOURCES = \
   amount.h \
   arith_uint256.cpp \
   arith_uint256.h \
+  consensus/consensus.cpp \
   consensus/merkle.cpp \
   consensus/merkle.h \
   consensus/params.h \
