@@ -30,14 +30,15 @@
 
 #include <secp256k1.h>
 
-# ifdef __cplusplus
+#ifdef __cplusplus
 extern "C" {
-# endif
+#endif
 
 /** Export a private key in DER format.
  *
  *  Returns: 1 if the private key was valid.
- *  Args: ctx:        pointer to a context object, initialized for signing (cannot
+ *  Args: ctx:        pointer to a context object, initialized for signing
+ * (cannot
  *                    be NULL)
  *  Out: privkey:     pointer to an array for storing the private key in BER.
  *                    Should have space for 279 bytes, and cannot be NULL.
@@ -54,13 +55,11 @@ extern "C" {
  *  Note that this function does not guarantee correct DER output. It is
  *  guaranteed to be parsable by secp256k1_ec_privkey_import_der
  */
-SECP256K1_WARN_UNUSED_RESULT int ec_privkey_export_der(
-    const secp256k1_context* ctx,
-    unsigned char *privkey,
-    size_t *privkeylen,
-    const unsigned char *seckey,
-    int compressed
-) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2) SECP256K1_ARG_NONNULL(3) SECP256K1_ARG_NONNULL(4);
+SECP256K1_WARN_UNUSED_RESULT int
+ec_privkey_export_der(const secp256k1_context *ctx, unsigned char *privkey,
+                      size_t *privkeylen, const unsigned char *seckey,
+                      int compressed) SECP256K1_ARG_NONNULL(1)
+    SECP256K1_ARG_NONNULL(2) SECP256K1_ARG_NONNULL(3) SECP256K1_ARG_NONNULL(4);
 
 /** Import a private key in DER format.
  * Returns: 1 if a private key was extracted.
@@ -76,12 +75,10 @@ SECP256K1_WARN_UNUSED_RESULT int ec_privkey_export_der(
  * only if you know in advance it is supposed to contain a secp256k1 private
  * key.
  */
-SECP256K1_WARN_UNUSED_RESULT int ec_privkey_import_der(
-    const secp256k1_context* ctx,
-    unsigned char *seckey,
-    const unsigned char *privkey,
-    size_t privkeylen
-) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2) SECP256K1_ARG_NONNULL(3);
+SECP256K1_WARN_UNUSED_RESULT int
+ec_privkey_import_der(const secp256k1_context *ctx, unsigned char *seckey,
+                      const unsigned char *privkey, size_t privkeylen)
+    SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2) SECP256K1_ARG_NONNULL(3);
 
 #ifdef __cplusplus
 }

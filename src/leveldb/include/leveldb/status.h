@@ -13,38 +13,38 @@
 #ifndef STORAGE_LEVELDB_INCLUDE_STATUS_H_
 #define STORAGE_LEVELDB_INCLUDE_STATUS_H_
 
-#include <string>
 #include "leveldb/slice.h"
+#include <string>
 
 namespace leveldb {
 
 class Status {
- public:
+public:
   // Create a success status.
-  Status() : state_(NULL) { }
+  Status() : state_(NULL) {}
   ~Status() { delete[] state_; }
 
   // Copy the specified status.
-  Status(const Status& s);
-  void operator=(const Status& s);
+  Status(const Status &s);
+  void operator=(const Status &s);
 
   // Return a success status.
   static Status OK() { return Status(); }
 
   // Return error status of an appropriate type.
-  static Status NotFound(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status NotFound(const Slice &msg, const Slice &msg2 = Slice()) {
     return Status(kNotFound, msg, msg2);
   }
-  static Status Corruption(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status Corruption(const Slice &msg, const Slice &msg2 = Slice()) {
     return Status(kCorruption, msg, msg2);
   }
-  static Status NotSupported(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status NotSupported(const Slice &msg, const Slice &msg2 = Slice()) {
     return Status(kNotSupported, msg, msg2);
   }
-  static Status InvalidArgument(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status InvalidArgument(const Slice &msg, const Slice &msg2 = Slice()) {
     return Status(kInvalidArgument, msg, msg2);
   }
-  static Status IOError(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status IOError(const Slice &msg, const Slice &msg2 = Slice()) {
     return Status(kIOError, msg, msg2);
   }
 
@@ -70,13 +70,13 @@ class Status {
   // Returns the string "OK" for success.
   std::string ToString() const;
 
- private:
+private:
   // OK status has a NULL state_.  Otherwise, state_ is a new[] array
   // of the following form:
   //    state_[0..3] == length of message
   //    state_[4]    == code
   //    state_[5..]  == message
-  const char* state_;
+  const char *state_;
 
   enum Code {
     kOk = 0,
@@ -91,14 +91,14 @@ class Status {
     return (state_ == NULL) ? kOk : static_cast<Code>(state_[4]);
   }
 
-  Status(Code code, const Slice& msg, const Slice& msg2);
-  static const char* CopyState(const char* s);
+  Status(Code code, const Slice &msg, const Slice &msg2);
+  static const char *CopyState(const char *s);
 };
 
-inline Status::Status(const Status& s) {
+inline Status::Status(const Status &s) {
   state_ = (s.state_ == NULL) ? NULL : CopyState(s.state_);
 }
-inline void Status::operator=(const Status& s) {
+inline void Status::operator=(const Status &s) {
   // The following condition catches both aliasing (when this == &s),
   // and the common case where both s and *this are ok.
   if (state_ != s.state_) {
@@ -107,6 +107,6 @@ inline void Status::operator=(const Status& s) {
   }
 }
 
-}  // namespace leveldb
+} // namespace leveldb
 
-#endif  // STORAGE_LEVELDB_INCLUDE_STATUS_H_
+#endif // STORAGE_LEVELDB_INCLUDE_STATUS_H_

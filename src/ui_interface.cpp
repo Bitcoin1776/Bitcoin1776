@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2016 The JFKBitcoin1776 Core developers
+// Copyright (c) 2010-2016 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,23 +7,21 @@
 
 CClientUIInterface uiInterface;
 
-bool InitError(const std::string& str)
-{
-    uiInterface.ThreadSafeMessageBox(str, "", CClientUIInterface::MSG_ERROR);
-    return false;
+bool InitError(const std::string &str) {
+  uiInterface.ThreadSafeMessageBox(str, "", CClientUIInterface::MSG_ERROR);
+  return false;
 }
 
-void InitWarning(const std::string& str)
-{
-    uiInterface.ThreadSafeMessageBox(str, "", CClientUIInterface::MSG_WARNING);
+void InitWarning(const std::string &str) {
+  uiInterface.ThreadSafeMessageBox(str, "", CClientUIInterface::MSG_WARNING);
 }
 
-std::string AmountHighWarn(const std::string& optname)
-{
-    return strprintf(_("%s is set very high!"), optname);
+std::string AmountHighWarn(const std::string &optname) {
+  return strprintf(_("%s is set very high!"), optname);
 }
 
-std::string AmountErrMsg(const char* const optname, const std::string& strValue)
-{
-    return strprintf(_("Invalid amount for -%s=<amount>: '%s'"), optname, strValue);
+std::string AmountErrMsg(const char *const optname,
+                         const std::string &strValue) {
+  return strprintf(_("Invalid amount for -%s=<amount>: '%s'"), optname,
+                   strValue);
 }

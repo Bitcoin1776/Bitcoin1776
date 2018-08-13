@@ -1,4 +1,4 @@
-// Copyright (c) 2014 The JFKBitcoin1776 Core developers
+// Copyright (c) 2014 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,14 +14,17 @@
 
 #include <QAbstractNativeEventFilter>
 
-class WinShutdownMonitor : public QAbstractNativeEventFilter
-{
+class WinShutdownMonitor : public QAbstractNativeEventFilter {
 public:
-    /** Implements QAbstractNativeEventFilter interface for processing Windows messages */
-    bool nativeEventFilter(const QByteArray &eventType, void *pMessage, long *pnResult);
+  /** Implements QAbstractNativeEventFilter interface for processing Windows
+   * messages */
+  bool nativeEventFilter(const QByteArray &eventType, void *pMessage,
+                         long *pnResult);
 
-    /** Register the reason for blocking shutdown on Windows to allow clean client exit */
-    static void registerShutdownBlockReason(const QString& strReason, const HWND& mainWinId);
+  /** Register the reason for blocking shutdown on Windows to allow clean client
+   * exit */
+  static void registerShutdownBlockReason(const QString &strReason,
+                                          const HWND &mainWinId);
 };
 #endif
 #endif

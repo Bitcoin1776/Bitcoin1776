@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2014 The JFKBitcoin1776 Core developers
+// Copyright (c) 2011-2014 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,43 +10,34 @@
 
 #include <QUrl>
 
-OpenURIDialog::OpenURIDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::OpenURIDialog)
-{
-    ui->setupUi(this);
+OpenURIDialog::OpenURIDialog(QWidget *parent)
+    : QDialog(parent), ui(new Ui::OpenURIDialog) {
+  ui->setupUi(this);
 #if QT_VERSION >= 0x040700
-    ui->uriEdit->setPlaceholderText("jfkbitcoin1776:");
+  ui->uriEdit->setPlaceholderText("jfkbitcoin1776:");
 #endif
 }
 
-OpenURIDialog::~OpenURIDialog()
-{
-    delete ui;
+OpenURIDialog::~OpenURIDialog() { delete ui; }
+
+QString OpenURIDialog::getURI() { return ui->uriEdit->text(); }
+
+void OpenURIDialog::accept() {
+  SendCoinsRecipient rcp;
+  if (GUIUtil::parseJFKBitcoin1776URI(getURI(), &rcp)) {
+    /* Only accept value URIs */
+    QDialog::accept();
+  } else {
+    ui->uriEdit->setValid(false);
+  }
 }
 
-QString OpenURIDialog::getURI()
-{
-    return ui->uriEdit->text();
-}
-
-void OpenURIDialog::accept()
-{
-    SendCoinsRecipient rcp;
-    if(GUIUtil::parseJFKBitcoin1776URI(getURI(), &rcp))
-    {
-        /* Only accept value URIs */
-        QDialog::accept();
-    } else {
-        ui->uriEdit->setValid(false);
-    }
-}
-
-void OpenURIDialog::on_selectFileButton_clicked()
-{
-    QString filename = GUIUtil::getOpenFileName(this, tr("Select payment request file to open"), "", "", nullptr);
-    if(filename.isEmpty())
-        return;
-    QUrl fileUri = QUrl::fromLocalFile(filename);
-    ui->uriEdit->setText("jfkbitcoin1776:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
+void OpenURIDialog::on_selectFileButton_clicked() {
+  QString filename = GUIUtil::getOpenFileName(
+      this, tr("Select payment request file to open"), "", "", nullptr);
+  if (filename.isEmpty())
+    return;
+  QUrl fileUri = QUrl::fromLocalFile(filename);
+  ui->uriEdit->setText("jfkbitcoin1776:?r=" +
+                       QUrl::toPercentEncoding(fileUri.toString()));
 }

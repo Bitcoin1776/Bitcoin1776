@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2014 The JFKBitcoin1776 Core developers
+// Copyright (c) 2011-2014 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,24 +7,23 @@
 
 #include <QObject>
 
-/** Macintosh-specific notification handler (supports UserNotificationCenter and Growl).
+/** Macintosh-specific notification handler (supports UserNotificationCenter and
+ * Growl).
  */
-class MacNotificationHandler : public QObject
-{
-    Q_OBJECT
+class MacNotificationHandler : public QObject {
+  Q_OBJECT
 
 public:
-    /** shows a 10.8+ UserNotification in the UserNotificationCenter
-     */
-    void showNotification(const QString &title, const QString &text);
+  /** shows a 10.8+ UserNotification in the UserNotificationCenter
+   */
+  void showNotification(const QString &title, const QString &text);
 
-    /** executes AppleScript */
-    void sendAppleScript(const QString &script);
+  /** executes AppleScript */
+  void sendAppleScript(const QString &script);
 
-    /** check if OS can handle UserNotifications */
-    bool hasUserNotificationCenterSupport(void);
-    static MacNotificationHandler *instance();
+  /** check if OS can handle UserNotifications */
+  bool hasUserNotificationCenterSupport(void);
+  static MacNotificationHandler *instance();
 };
-
 
 #endif // JFKBITCOIN1776_QT_MACNOTIFICATIONHANDLER_H

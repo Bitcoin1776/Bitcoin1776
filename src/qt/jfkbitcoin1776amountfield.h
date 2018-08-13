@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2015 The JFKBitcoin1776 Core developers
+// Copyright (c) 2011-2015 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,59 +17,61 @@ QT_END_NAMESPACE
 
 /** Widget for entering jfkbitcoin1776 amounts.
   */
-class JFKBitcoin1776AmountField: public QWidget
-{
-    Q_OBJECT
+class JFKBitcoin1776AmountField : public QWidget {
+  Q_OBJECT
 
-    // ugly hack: for some unknown reason CAmount (instead of qint64) does not work here as expected
-    // discussion: https://github.com/jfkbitcoin1776/jfkbitcoin1776/pull/5117
-    Q_PROPERTY(qint64 value READ value WRITE setValue NOTIFY valueChanged USER true)
+  // ugly hack: for some unknown reason CAmount (instead of qint64) does not
+  // work here as expected
+  // discussion: https://github.com/jfkbitcoin1776/jfkbitcoin1776/pull/5117
+  Q_PROPERTY(
+      qint64 value READ value WRITE setValue NOTIFY valueChanged USER true)
 
 public:
-    explicit JFKBitcoin1776AmountField(QWidget *parent = 0);
+  explicit JFKBitcoin1776AmountField(QWidget *parent = 0);
 
-    CAmount value(bool *value=0) const;
-    void setValue(const CAmount& value);
+  CAmount value(bool *value = 0) const;
+  void setValue(const CAmount &value);
 
-    /** Set single step in satoshis **/
-    void setSingleStep(const CAmount& step);
+  /** Set single step in satoshis **/
+  void setSingleStep(const CAmount &step);
 
-    /** Make read-only **/
-    void setReadOnly(bool fReadOnly);
+  /** Make read-only **/
+  void setReadOnly(bool fReadOnly);
 
-    /** Mark current value as invalid in UI. */
-    void setValid(bool valid);
-    /** Perform input validation, mark field as invalid if entered value is not valid. */
-    bool validate();
+  /** Mark current value as invalid in UI. */
+  void setValid(bool valid);
+  /** Perform input validation, mark field as invalid if entered value is not
+   * valid. */
+  bool validate();
 
-    /** Change unit used to display amount. */
-    void setDisplayUnit(int unit);
+  /** Change unit used to display amount. */
+  void setDisplayUnit(int unit);
 
-    /** Make field empty and ready for new input. */
-    void clear();
+  /** Make field empty and ready for new input. */
+  void clear();
 
-    /** Enable/Disable. */
-    void setEnabled(bool fEnabled);
+  /** Enable/Disable. */
+  void setEnabled(bool fEnabled);
 
-    /** Qt messes up the tab chain by default in some cases (issue https://bugreports.qt-project.org/browse/QTBUG-10907),
-        in these cases we have to set it up manually.
-    */
-    QWidget *setupTabChain(QWidget *prev);
+  /** Qt messes up the tab chain by default in some cases (issue
+     https://bugreports.qt-project.org/browse/QTBUG-10907),
+      in these cases we have to set it up manually.
+  */
+  QWidget *setupTabChain(QWidget *prev);
 
 Q_SIGNALS:
-    void valueChanged();
+  void valueChanged();
 
 protected:
-    /** Intercept focus-in event and ',' key presses */
-    bool eventFilter(QObject *object, QEvent *event);
+  /** Intercept focus-in event and ',' key presses */
+  bool eventFilter(QObject *object, QEvent *event);
 
 private:
-    AmountSpinBox *amount;
-    QValueComboBox *unit;
+  AmountSpinBox *amount;
+  QValueComboBox *unit;
 
 private Q_SLOTS:
-    void unitChanged(int idx);
-
+  void unitChanged(int idx);
 };
 
 #endif // JFKBITCOIN1776_QT_JFKBITCOIN1776AMOUNTFIELD_H

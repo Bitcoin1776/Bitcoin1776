@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2016 The JFKBitcoin1776 Core developers
+// Copyright (c) 2011-2016 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -34,94 +34,90 @@
 // correctly.  Workaround is to display a space in a small font.  If you
 // change this, please test that it doesn't cause the parent span to start
 // wrapping.
-#define HTML_HACK_SP "<span style='white-space: nowrap; font-size: 6pt'> </span>"
+#define HTML_HACK_SP                                                           \
+  "<span style='white-space: nowrap; font-size: 6pt'> </span>"
 
 // Define THIN_SP_* variables to be our preferred type of thin space
-#define THIN_SP_CP   REAL_THIN_SP_CP
+#define THIN_SP_CP REAL_THIN_SP_CP
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
 /** JFKBitcoin1776 unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class JFKBitcoin1776Units: public QAbstractListModel
-{
-    Q_OBJECT
+class JFKBitcoin1776Units : public QAbstractListModel {
+  Q_OBJECT
 
 public:
-    explicit JFKBitcoin1776Units(QObject *parent);
+  explicit JFKBitcoin1776Units(QObject *parent);
 
-    /** JFKBitcoin1776 units.
-      @note Source: https://en.jfkbitcoin1776.it/wiki/Units . Please add only sensible ones
-     */
-    enum Unit
-    {
-        JFK,
-        mJFK,
-        uJFK
-    };
+  /** JFKBitcoin1776 units.
+    @note Source: https://en.jfkbitcoin1776.it/wiki/Units . Please add only
+    sensible ones
+   */
+  enum Unit { JFK, mJFK, uJFK };
 
-    enum SeparatorStyle
-    {
-        separatorNever,
-        separatorStandard,
-        separatorAlways
-    };
+  enum SeparatorStyle { separatorNever, separatorStandard, separatorAlways };
 
-    //! @name Static API
-    //! Unit conversion and formatting
-    ///@{
+  //! @name Static API
+  //! Unit conversion and formatting
+  ///@{
 
-    //! Get list of units, for drop-down box
-    static QList<Unit> availableUnits();
-    //! Is unit ID valid?
-    static bool valid(int unit);
-    //! Short name
-    static QString name(int unit);
-    //! Longer description
-    static QString description(int unit);
-    //! Number of Satoshis (1e-8) per unit
-    static qint64 factor(int unit);
-    //! Number of decimals left
-    static int decimals(int unit);
-    //! Format as string
-    static QString format(int unit, const CAmount& amount, bool plussign=false, SeparatorStyle separators=separatorStandard);
-    //! Format as string (with unit)
-    static QString formatWithUnit(int unit, const CAmount& amount, bool plussign=false, SeparatorStyle separators=separatorStandard);
-    //! Format as HTML string (with unit)
-    static QString formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign=false, SeparatorStyle separators=separatorStandard);
-    //! Parse string to coin amount
-    static bool parse(int unit, const QString &value, CAmount *val_out);
-    //! Gets title for amount column including current display unit if optionsModel reference available */
-    static QString getAmountColumnTitle(int unit);
-    ///@}
+  //! Get list of units, for drop-down box
+  static QList<Unit> availableUnits();
+  //! Is unit ID valid?
+  static bool valid(int unit);
+  //! Short name
+  static QString name(int unit);
+  //! Longer description
+  static QString description(int unit);
+  //! Number of Satoshis (1e-8) per unit
+  static qint64 factor(int unit);
+  //! Number of decimals left
+  static int decimals(int unit);
+  //! Format as string
+  static QString format(int unit, const CAmount &amount, bool plussign = false,
+                        SeparatorStyle separators = separatorStandard);
+  //! Format as string (with unit)
+  static QString formatWithUnit(int unit, const CAmount &amount,
+                                bool plussign = false,
+                                SeparatorStyle separators = separatorStandard);
+  //! Format as HTML string (with unit)
+  static QString
+  formatHtmlWithUnit(int unit, const CAmount &amount, bool plussign = false,
+                     SeparatorStyle separators = separatorStandard);
+  //! Parse string to coin amount
+  static bool parse(int unit, const QString &value, CAmount *val_out);
+  //! Gets title for amount column including current display unit if
+  //! optionsModel reference available */
+  static QString getAmountColumnTitle(int unit);
+  ///@}
 
-    //! @name AbstractListModel implementation
-    //! List model for unit drop-down selection box.
-    ///@{
-    enum RoleIndex {
-        /** Unit identifier */
-        UnitRole = Qt::UserRole
-    };
-    int rowCount(const QModelIndex &parent) const;
-    QVariant data(const QModelIndex &index, int role) const;
-    ///@}
+  //! @name AbstractListModel implementation
+  //! List model for unit drop-down selection box.
+  ///@{
+  enum RoleIndex {
+    /** Unit identifier */
+    UnitRole = Qt::UserRole
+  };
+  int rowCount(const QModelIndex &parent) const;
+  QVariant data(const QModelIndex &index, int role) const;
+  ///@}
 
-    static QString removeSpaces(QString text)
-    {
-        text.remove(' ');
-        text.remove(QChar(THIN_SP_CP));
+  static QString removeSpaces(QString text) {
+    text.remove(' ');
+    text.remove(QChar(THIN_SP_CP));
 #if (THIN_SP_CP != REAL_THIN_SP_CP)
-        text.remove(QChar(REAL_THIN_SP_CP));
+    text.remove(QChar(REAL_THIN_SP_CP));
 #endif
-        return text;
-    }
+    return text;
+  }
 
-    //! Return maximum number of base units (Satoshis)
-    static CAmount maxMoney();
+  //! Return maximum number of base units (Satoshis)
+  static CAmount maxMoney();
 
 private:
-    QList<JFKBitcoin1776Units::Unit> unitlist;
+  QList<JFKBitcoin1776Units::Unit> unitlist;
 };
 typedef JFKBitcoin1776Units::Unit JFKBitcoin1776Unit;
 

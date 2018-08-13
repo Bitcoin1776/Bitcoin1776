@@ -53,9 +53,9 @@
 
 #include <secp256k1.h>
 
-# ifdef __cplusplus
+#ifdef __cplusplus
 extern "C" {
-# endif
+#endif
 
 /** Parse a signature in "lax DER" format
  *
@@ -68,7 +68,7 @@ extern "C" {
  *  This function will accept any valid DER encoded signature, even if the
  *  encoded numbers are out of range. In addition, it will accept signatures
  *  which violate the DER spec in various ways. Its purpose is to allow
- *  validation of the JFKBitcoin1776 blockchain, which includes non-DER signatures
+ *  validation of the Bitcoin blockchain, which includes non-DER signatures
  *  from before the network rules were updated to enforce DER. Note that
  *  the set of supported violations is a strict subset of what OpenSSL will
  *  accept.
@@ -77,12 +77,10 @@ extern "C" {
  *  encoded numbers are out of range, signature validation with it is
  *  guaranteed to fail for every message and public key.
  */
-int ecdsa_signature_parse_der_lax(
-    const secp256k1_context* ctx,
-    secp256k1_ecdsa_signature* sig,
-    const unsigned char *input,
-    size_t inputlen
-) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2) SECP256K1_ARG_NONNULL(3);
+int ecdsa_signature_parse_der_lax(const secp256k1_context *ctx,
+                                  secp256k1_ecdsa_signature *sig,
+                                  const unsigned char *input, size_t inputlen)
+    SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2) SECP256K1_ARG_NONNULL(3);
 
 #ifdef __cplusplus
 }

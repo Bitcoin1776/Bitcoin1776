@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2014 The JFKBitcoin1776 Core developers
+// Copyright (c) 2011-2014 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,32 +16,32 @@ class CWallet;
 class CWalletTx;
 
 /** Data model for a walletmodel transaction. */
-class WalletModelTransaction
-{
+class WalletModelTransaction {
 public:
-    explicit WalletModelTransaction(const QList<SendCoinsRecipient> &recipients);
-    ~WalletModelTransaction();
+  explicit WalletModelTransaction(const QList<SendCoinsRecipient> &recipients);
+  ~WalletModelTransaction();
 
-    QList<SendCoinsRecipient> getRecipients();
+  QList<SendCoinsRecipient> getRecipients();
 
-    CWalletTx *getTransaction();
-    unsigned int getTransactionSize();
+  CWalletTx *getTransaction();
+  unsigned int getTransactionSize();
 
-    void setTransactionFee(const CAmount& newFee);
-    CAmount getTransactionFee();
+  void setTransactionFee(const CAmount &newFee);
+  CAmount getTransactionFee();
 
-    CAmount getTotalTransactionAmount();
+  CAmount getTotalTransactionAmount();
 
-    void newPossibleKeyChange(CWallet *wallet);
-    CReserveKey *getPossibleKeyChange();
+  void newPossibleKeyChange(CWallet *wallet);
+  CReserveKey *getPossibleKeyChange();
 
-    void reassignAmounts(int nChangePosRet); // needed for the subtract-fee-from-amount feature
+  void reassignAmounts(
+      int nChangePosRet); // needed for the subtract-fee-from-amount feature
 
 private:
-    QList<SendCoinsRecipient> recipients;
-    CWalletTx *walletTransaction;
-    CReserveKey *keyChange;
-    CAmount fee;
+  QList<SendCoinsRecipient> recipients;
+  CWalletTx *walletTransaction;
+  CReserveKey *keyChange;
+  CAmount fee;
 };
 
 #endif // JFKBITCOIN1776_QT_WALLETMODELTRANSACTION_H

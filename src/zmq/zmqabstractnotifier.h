@@ -1,4 +1,4 @@
-// Copyright (c) 2015 The JFKBitcoin1776 Core developers
+// Copyright (c) 2015 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,35 +10,32 @@
 class CBlockIndex;
 class CZMQAbstractNotifier;
 
-typedef CZMQAbstractNotifier* (*CZMQNotifierFactory)();
+typedef CZMQAbstractNotifier *(*CZMQNotifierFactory)();
 
-class CZMQAbstractNotifier
-{
+class CZMQAbstractNotifier {
 public:
-    CZMQAbstractNotifier() : psocket(0) { }
-    virtual ~CZMQAbstractNotifier();
+  CZMQAbstractNotifier() : psocket(0) {}
+  virtual ~CZMQAbstractNotifier();
 
-    template <typename T>
-    static CZMQAbstractNotifier* Create()
-    {
-        return new T();
-    }
+  template <typename T> static CZMQAbstractNotifier *Create() {
+    return new T();
+  }
 
-    std::string GetType() const { return type; }
-    void SetType(const std::string &t) { type = t; }
-    std::string GetAddress() const { return address; }
-    void SetAddress(const std::string &a) { address = a; }
+  std::string GetType() const { return type; }
+  void SetType(const std::string &t) { type = t; }
+  std::string GetAddress() const { return address; }
+  void SetAddress(const std::string &a) { address = a; }
 
-    virtual bool Initialize(void *pcontext) = 0;
-    virtual void Shutdown() = 0;
+  virtual bool Initialize(void *pcontext) = 0;
+  virtual void Shutdown() = 0;
 
-    virtual bool NotifyBlock(const CBlockIndex *pindex);
-    virtual bool NotifyTransaction(const CTransaction &transaction);
+  virtual bool NotifyBlock(const CBlockIndex *pindex);
+  virtual bool NotifyTransaction(const CTransaction &transaction);
 
 protected:
-    void *psocket;
-    std::string type;
-    std::string address;
+  void *psocket;
+  std::string type;
+  std::string address;
 };
 
 #endif // JFKBITCOIN1776_ZMQ_ZMQABSTRACTNOTIFIER_H

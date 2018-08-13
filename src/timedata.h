@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2016 The JFKBitcoin1776 Core developers
+// Copyright (c) 2014-2016 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,65 +14,54 @@ static const int64_t DEFAULT_MAX_TIME_ADJUSTMENT = 70 * 60;
 
 class CNetAddr;
 
-/** 
+/**
  * Median filter over a stream of values.
  * Returns the median of the last N numbers
  */
-template <typename T>
-class CMedianFilter
-{
+template <typename T> class CMedianFilter {
 private:
-    std::vector<T> vValues;
-    std::vector<T> vSorted;
-    unsigned int nSize;
+  std::vector<T> vValues;
+  std::vector<T> vSorted;
+  unsigned int nSize;
 
 public:
-    CMedianFilter(unsigned int _size, T initial_value) : nSize(_size)
-    {
-        vValues.reserve(_size);
-        vValues.push_back(initial_value);
-        vSorted = vValues;
-    }
+  CMedianFilter(unsigned int _size, T initial_value) : nSize(_size) {
+    vValues.reserve(_size);
+    vValues.push_back(initial_value);
+    vSorted = vValues;
+  }
 
-    void input(T value)
-    {
-        if (vValues.size() == nSize) {
-            vValues.erase(vValues.begin());
-        }
-        vValues.push_back(value);
-
-        vSorted.resize(vValues.size());
-        std::copy(vValues.begin(), vValues.end(), vSorted.begin());
-        std::sort(vSorted.begin(), vSorted.end());
+  void input(T value) {
+    if (vValues.size() == nSize) {
+      vValues.erase(vValues.begin());
     }
+    vValues.push_back(value);
 
-    T median() const
-    {
-        int vSortedSize = vSorted.size();
-        assert(vSortedSize > 0);
-        if (vSortedSize & 1) // Odd number of elements
-        {
-            return vSorted[vSortedSize / 2];
-        } else // Even number of elements
-        {
-            return (vSorted[vSortedSize / 2 - 1] + vSorted[vSortedSize / 2]) / 2;
-        }
-    }
+    vSorted.resize(vValues.size());
+    std::copy(vValues.begin(), vValues.end(), vSorted.begin());
+    std::sort(vSorted.begin(), vSorted.end());
+  }
 
-    int size() const
+  T median() const {
+    int vSortedSize = vSorted.size();
+    assert(vSortedSize > 0);
+    if (vSortedSize & 1) // Odd number of elements
     {
-        return vValues.size();
+      return vSorted[vSortedSize / 2];
+    } else // Even number of elements
+    {
+      return (vSorted[vSortedSize / 2 - 1] + vSorted[vSortedSize / 2]) / 2;
     }
+  }
 
-    std::vector<T> sorted() const
-    {
-        return vSorted;
-    }
+  int size() const { return vValues.size(); }
+
+  std::vector<T> sorted() const { return vSorted; }
 };
 
 /** Functions to keep track of adjusted P2P time */
 int64_t GetTimeOffset();
 int64_t GetAdjustedTime();
-void AddTimeData(const CNetAddr& ip, int64_t nTime);
+void AddTimeData(const CNetAddr &ip, int64_t nTime);
 
 #endif // JFKBITCOIN1776_TIMEDATA_H

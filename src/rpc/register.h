@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2016 The JFKBitcoin1776 Core developers
+// Copyright (c) 2009-2016 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,13 +20,12 @@ void RegisterMiningRPCCommands(CRPCTable &tableRPC);
 /** Register raw transaction RPC commands */
 void RegisterRawTransactionRPCCommands(CRPCTable &tableRPC);
 
-static inline void RegisterAllCoreRPCCommands(CRPCTable &t)
-{
-    RegisterBlockchainRPCCommands(t);
-    RegisterNetRPCCommands(t);
-    RegisterMiscRPCCommands(t);
-    RegisterMiningRPCCommands(t);
-    RegisterRawTransactionRPCCommands(t);
+static inline void RegisterAllCoreRPCCommands(CRPCTable &t) {
+  RegisterBlockchainRPCCommands(t);
+  RegisterNetRPCCommands(t);
+  RegisterMiscRPCCommands(t);
+  RegisterMiningRPCCommands(t);
+  RegisterRawTransactionRPCCommands(t);
 }
 
 #endif

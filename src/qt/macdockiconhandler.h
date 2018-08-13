@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2015 The JFKBitcoin1776 Core developers
+// Copyright (c) 2011-2015 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,29 +16,28 @@ QT_END_NAMESPACE
 
 /** Macintosh-specific dock icon handler.
  */
-class MacDockIconHandler : public QObject
-{
-    Q_OBJECT
+class MacDockIconHandler : public QObject {
+  Q_OBJECT
 
 public:
-    ~MacDockIconHandler();
+  ~MacDockIconHandler();
 
-    QMenu *dockMenu();
-    void setIcon(const QIcon &icon);
-    void setMainWindow(QMainWindow *window);
-    static MacDockIconHandler *instance();
-    static void cleanup();
-    void handleDockIconClickEvent();
+  QMenu *dockMenu();
+  void setIcon(const QIcon &icon);
+  void setMainWindow(QMainWindow *window);
+  static MacDockIconHandler *instance();
+  static void cleanup();
+  void handleDockIconClickEvent();
 
 Q_SIGNALS:
-    void dockIconClicked();
+  void dockIconClicked();
 
 private:
-    MacDockIconHandler();
+  MacDockIconHandler();
 
-    QWidget *m_dummyWidget;
-    QMenu *m_dockMenu;
-    QMainWindow *mainWindow;
+  QWidget *m_dummyWidget;
+  QMenu *m_dockMenu;
+  QMainWindow *mainWindow;
 };
 
 #endif // JFKBITCOIN1776_QT_MACDOCKICONHANDLER_H

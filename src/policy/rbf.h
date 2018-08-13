@@ -1,4 +1,4 @@
-// Copyright (c) 2016 The JFKBitcoin1776 Core developers
+// Copyright (c) 2016 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,9 +10,9 @@
 static const uint32_t MAX_BIP125_RBF_SEQUENCE = 0xfffffffd;
 
 enum RBFTransactionState {
-    RBF_TRANSACTIONSTATE_UNKNOWN,
-    RBF_TRANSACTIONSTATE_REPLACEABLE_BIP125,
-    RBF_TRANSACTIONSTATE_FINAL
+  RBF_TRANSACTIONSTATE_UNKNOWN,
+  RBF_TRANSACTIONSTATE_REPLACEABLE_BIP125,
+  RBF_TRANSACTIONSTATE_FINAL
 };
 
 // Check whether the sequence numbers on this transaction are signaling

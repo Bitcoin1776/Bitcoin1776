@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The JFKBitcoin1776 Core developers
+// Copyright (c) 2017 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,9 +10,10 @@
 #include <univalue.h>
 
 /** Generate blocks (mine) */
-UniValue generateBlocks(std::shared_ptr<CReserveScript> coinbaseScript, int nGenerate, uint64_t nMaxTries, bool keepScript);
+UniValue generateBlocks(std::shared_ptr<CReserveScript> coinbaseScript,
+                        int nGenerate, uint64_t nMaxTries, bool keepScript);
 
 /** Check bounds on a command line confirm target */
-unsigned int ParseConfirmTarget(const UniValue& value);
+unsigned int ParseConfirmTarget(const UniValue &value);
 
 #endif
